@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Viva Bem</title>
+    <meta name="description" content="Fisioterapia, psicologia, nutrição e pilates em um só lugar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO: logo + menu -->
+    <header class="cabecalho">
+        <a href="#inicio" class="logo">Viva<span>Bem</span></a>
+
+        <!-- Botão que só aparece no celular (abre/fecha o menu) -->
+        <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+        <nav class="menu">
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a href="#contato" class="botao">Agendar</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. INÍCIO (a "vitrine" do site) -->
+        <section id="inicio" class="inicio">
+            <div class="container">
+                <h1>Cuidado completo para o seu corpo e a sua mente</h1>
+                <p>Fisioterapia, psicologia, nutrição e pilates em um só lugar, com profissionais que acompanham você de perto.</p>
+                <a href="#contato" class="botao">Agende sua avaliação</a>
+            </div>
+        </section>
+
+        <!-- 2. SERVIÇOS: cada serviço é um "card" -->
+        <section id="servicos" class="secao">
+            <div class="container">
+                <h2>Nossos serviços</h2>
+                <div class="cards">
+                    <article class="card">
+                        <span class="icone">🦴</span>
+                        <h3>Fisioterapia</h3>
+                        <p>Reabilitação de lesões, dores na coluna e recuperação pós-cirúrgica.</p>
+                    </article>
+                    <article class="card">
+                        <span class="icone">🧠</span>
+                        <h3>Psicologia</h3>
+                        <p>Atendimento para ansiedade, estresse e autoconhecimento.</p>
+                    </article>
+                    <article class="card">
+                        <span class="icone">🥗</span>
+                        <h3>Nutrição</h3>
+                        <p>Plano alimentar individual, pensado para a sua rotina.</p>
+                    </article>
+                    <article class="card">
+                        <span class="icone">🧘</span>
+                        <h3>Pilates</h3>
+                        <p>Aulas em turmas pequenas para fortalecer e melhorar a postura.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SOBRE -->
+        <section id="sobre" class="secao secao-clara">
+            <div class="container sobre">
+                <div>
+                    <h2>Sobre a clínica</h2>
+                    <p>A Viva Bem reúne diferentes áreas da saúde para cuidar de você de forma integrada. Cada paciente passa por uma avaliação e recebe um acompanhamento individual.</p>
+                    <p class="responsavel">Responsável técnico: Nome do Profissional — CREFITO 00000-F</p>
+                </div>
+                <ul class="numeros">
+                    <li><strong>4</strong> especialidades</li>
+                    <li><strong>1</strong> endereço</li>
+                    <li><strong>Seg–Sáb</strong> atendimento</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. DÚVIDAS (o JavaScript abre/fecha as respostas) -->
+        <section id="duvidas" class="secao">
+            <div class="container">
+                <h2>Dúvidas frequentes</h2>
+                <div class="pergunta">
+                    <button class="pergunta-titulo">Vocês atendem por convênio?</button>
+                    <p class="pergunta-resposta">Atendemos particular e emitimos recibo para você pedir reembolso ao seu plano.</p>
+                </div>
+                <div class="pergunta">
+                    <button class="pergunta-titulo">Preciso de pedido médico?</button>
+                    <p class="pergunta-resposta">Para fisioterapia, o ideal é trazer. Para as outras áreas, não é obrigatório.</p>
+                </div>
+                <div class="pergunta">
+                    <button class="pergunta-titulo">Quanto tempo dura uma sessão?</button>
+                    <p class="pergunta-resposta">Em média 50 minutos, dependendo da especialidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTATO: o formulário monta uma mensagem e abre o WhatsApp -->
+        <section id="contato" class="secao secao-clara">
+            <div class="container">
+                <h2>Agende sua avaliação</h2>
+                <form class="formulario" id="formulario">
+                    <label for="nome">Seu nome</label>
+                    <input type="text" id="nome" placeholder="Ex.: Maria Silva">
+
+                    <label for="servico">Serviço</label>
+                    <select id="servico">
+                        <option value="">Escolha um serviço</option>
+                        <option>Fisioterapia</option>
+                        <option>Psicologia</option>
+                        <option>Nutrição</option>
+                        <option>Pilates</option>
+                    </select>
+
+                    <p class="erro" id="erro"></p>
+                    <button type="submit" class="botao">Enviar pelo WhatsApp</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Clínica Viva Bem · Endereço da clínica · (61) 90000-0000</p>
+        <p>© <span id="ano"></span> Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

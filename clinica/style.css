@@ -1,0 +1,321 @@
+/* ===== Cores e medidas reutilizáveis (variáveis CSS) ===== */
+:root {
+   --verde: #2f9e8f;
+   --verde-escuro: #1f6f64;
+   --texto: #1e2a32;
+   --cinza: #5b6670;
+   --fundo-claro: #f2f8f7;
+   --branco: #ffffff;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   scroll-behavior: smooth; /* rolagem suave ao clicar no menu */
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+   color: var(--texto);
+   background: var(--branco);
+   line-height: 1.6;
+}
+
+/* Limita a largura do conteúdo e centraliza */
+.container {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 16px;
+}
+
+.botao {
+   display: inline-block;
+   background: var(--verde);
+   color: var(--branco);
+   padding: 12px 24px;
+   border: none;
+   border-radius: 999px;
+   font: inherit;
+   font-weight: 600;
+   text-decoration: none;
+   cursor: pointer;
+   transition: background 0.2s;
+}
+
+.botao:hover {
+   background: var(--verde-escuro);
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+   position: sticky; /* fica "grudado" no topo ao rolar */
+   top: 0;
+   z-index: 10;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 16px 24px;
+   background: var(--branco);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+   font-size: 24px;
+   font-weight: 700;
+   color: var(--texto);
+   text-decoration: none;
+}
+
+.logo span {
+   color: var(--verde);
+}
+
+.menu {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+}
+
+.menu a:not(.botao) {
+   color: var(--texto);
+   text-decoration: none;
+}
+
+.menu a:not(.botao):hover {
+   color: var(--verde);
+}
+
+.botao-menu {
+   display: none; /* escondido no computador */
+   background: none;
+   border: none;
+   font-size: 28px;
+   cursor: pointer;
+}
+
+/* ===== Início ===== */
+.inicio {
+   background: linear-gradient(135deg, var(--fundo-claro), #d8efeb);
+   padding: 100px 0;
+   text-align: center;
+}
+
+.inicio h1 {
+   font-size: 44px;
+   line-height: 1.2;
+   max-width: 750px;
+   margin: 0 auto 20px;
+}
+
+.inicio p {
+   color: var(--cinza);
+   font-size: 18px;
+   max-width: 600px;
+   margin: 0 auto 32px;
+}
+
+/* ===== Seções ===== */
+.secao {
+   padding: 80px 0;
+}
+
+.secao-clara {
+   background: var(--fundo-claro);
+}
+
+.secao h2 {
+   font-size: 32px;
+   margin-bottom: 32px;
+   text-align: center;
+}
+
+/* ===== Cards de serviços (grid) ===== */
+.cards {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+   gap: 24px;
+}
+
+.card {
+   background: var(--branco);
+   border: 1px solid #e3ecea;
+   border-radius: 16px;
+   padding: 28px;
+   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.icone {
+   font-size: 36px;
+}
+
+.card h3 {
+   margin: 12px 0 8px;
+}
+
+.card p {
+   color: var(--cinza);
+}
+
+/* ===== Sobre ===== */
+.sobre {
+   display: flex;
+   gap: 48px;
+   align-items: center;
+}
+
+.sobre h2 {
+   text-align: left;
+}
+
+.sobre p {
+   color: var(--cinza);
+   margin-bottom: 16px;
+}
+
+.responsavel {
+   font-size: 14px;
+}
+
+.numeros {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   min-width: 200px;
+}
+
+.numeros li {
+   background: var(--branco);
+   border-radius: 12px;
+   padding: 16px 20px;
+}
+
+.numeros strong {
+   display: block;
+   font-size: 26px;
+   color: var(--verde);
+}
+
+/* ===== Dúvidas ===== */
+.pergunta {
+   max-width: 700px;
+   margin: 0 auto 12px;
+   border: 1px solid #e3ecea;
+   border-radius: 12px;
+   overflow: hidden;
+}
+
+.pergunta-titulo {
+   width: 100%;
+   text-align: left;
+   background: var(--branco);
+   border: none;
+   padding: 18px 20px;
+   font: inherit;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.pergunta-titulo::after {
+   content: "+";
+   float: right;
+   color: var(--verde);
+}
+
+.pergunta-resposta {
+   display: none; /* começa fechada */
+   padding: 0 20px 18px;
+   color: var(--cinza);
+}
+
+/* Quando o JS coloca a classe "aberta", a resposta aparece */
+.pergunta.aberta .pergunta-resposta {
+   display: block;
+}
+
+.pergunta.aberta .pergunta-titulo::after {
+   content: "−";
+}
+
+/* ===== Formulário ===== */
+.formulario {
+   max-width: 480px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.formulario input,
+.formulario select {
+   padding: 12px;
+   border: 1px solid #cfdcd9;
+   border-radius: 8px;
+   font: inherit;
+   margin-bottom: 8px;
+}
+
+.erro {
+   color: #c0392b;
+   min-height: 24px;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+   background: var(--texto);
+   color: #c9d3d8;
+   text-align: center;
+   padding: 32px 16px;
+   font-size: 14px;
+}
+
+/* ===== Celular (telas até 700px) ===== */
+@media (max-width: 700px) {
+   .botao-menu {
+      display: block;
+   }
+
+   /* O menu vira uma lista escondida embaixo do cabeçalho */
+   .menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--branco);
+      padding: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+   }
+
+   /* O JS coloca a classe "aberto" para mostrar o menu */
+   .menu.aberto {
+      display: flex;
+   }
+
+   .inicio {
+      padding: 60px 0;
+   }
+
+   .inicio h1 {
+      font-size: 30px;
+   }
+
+   .sobre {
+      flex-direction: column;
+   }
+
+   .numeros {
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+}
